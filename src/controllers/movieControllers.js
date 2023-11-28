@@ -105,12 +105,12 @@ const postMovie = (req, res) => {
 };
 
 const postUser = (req, res) => {
-  const { firstname, lastname, birthday, city } = req.body;
+  const { firstname, lastname, email, city, language } = req.body;
 
   database
     .query(
-      "INSERT INTO users(firstname, lastname, birthday, city) VALUES (?, ?, ?, ?)",
-      [firstname, lastname, birthday, city]
+      "INSERT INTO users(firstname, lastname, email, city, language) VALUES (?, ?, ?, ?, ?)",
+      [firstname, lastname, email, city, language]
     )
     .then(([result]) => {
       res.status(201).send({ id: result.insertId });
