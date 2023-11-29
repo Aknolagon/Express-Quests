@@ -40,6 +40,7 @@ const postUser = (req, res) => {
       res.status(201).send({ id: result.insertId });
     })
     .catch((err) => {
+      console.log(err)
       res.sendStatus(500);
     });
 };
