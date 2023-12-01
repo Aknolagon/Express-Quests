@@ -174,7 +174,7 @@ describe("DELETE /api/users/:id", () => {
     };
 
     const [result] = await database.query(
-      "INSERT INTO users(firstname, lastname, email, city, language) VALUES (?, ?, ?, ?, ?)",
+      "DELETE users(firstname, lastname, email, city, language) VALUES (?, ?, ?, ?, ?)",
       [
         newUser.firstname,
         newUser.lastname,
